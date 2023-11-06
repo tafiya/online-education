@@ -1,23 +1,27 @@
 //import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/image/logo.jpg'
+import { useContext } from "react";
+import { AuthContext } from './../Providers/AuthProvider';
+import profile from '../assets/image/istockphoto-1495088043-612x612.jpg'
 
 
 const Navbar = () => {
-    // const {user,logOut}=useContext(AuthContext);
-    // const handleLogOut=()=>{
-    //   logOut()
-    //   .then(()=>{})
-    //   .catch(error=>console.log(error))
-    // }
+    const {user,logOut}=useContext(AuthContext);
+    const handleLogOut=()=>{
+      logOut()
+      .then(()=>{})
+      .catch(error=>console.log(error))
+    }
       const navItems=<>
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/about">About</Link> </li>
-      {/* {
+      <li><NavLink  className=" text-yellow-500 font-bold text-lg" to="/">Home</NavLink></li>
+      <li><NavLink className=" text-yellow-500 font-bold text-lg" to="/about">About</NavLink></li>
+      <li><NavLink className=" text-yellow-500 font-bold text-lg" to="/assignments">Assignments</NavLink></li>
+      {
         user?.email?<>
-        <li><Link><button onClick={handleLogOut}>LogOut</button></Link></li>
-        <li><Link to='booking'>My Bookings</Link></li></>:<li><Link to='/login'>Login</Link></li>
-      } */}
+   
+        <li><Link className=" text-yellow-500 font-bold text-lg" to='myAssignments'>My Assignments</Link></li></>:<></>
+      }
       
       
      
@@ -43,7 +47,11 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Appointment</button>
+        {
+        user? <div className="flex flex-row items-center text-white text-lg  lg:gap-2 lg:font-medium"><h2>{user.displayName?user.displayName:'no name'}</h2> <img src={user.photoURL? user.photoURL:profile
+        } alt="" className=" border rounded-full h-12 w-12" /> <button onClick={handleLogOut} className="   text-white btn btn-outline btn-warning">LogOut</button></div> :<Link to='/login'><button className=" btn btn-outline btn-warning text-white">Login</button></Link>
+    
+      }
         </div>
       </div>
     );
