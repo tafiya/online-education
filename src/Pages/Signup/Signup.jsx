@@ -1,27 +1,50 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import login from '../../assets/image/login.svg'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Signup = () => {
+  const {createUser}=useContext(AuthContext);
+  const [registerError,setRegister]=useState('');
+  const [success,setSuccess]=useState('');
+  const navigate = useNavigate();
 
-   const {createUser}=useContext(AuthContext);
+
     const handleSignUp=e=>{
         e.preventDefault();
-        const form =e.target;
-        const name=form.name.value;
-        const email=form.email.value;
-        const password=form.password.value;
+        const form = new FormData(e.currentTarget);
+        console.log(form.get('email'));
+        const name= form.get('name');
+        const photo= form.get('photo');
+        const email= form.get('email');
+        const password=form.get('password');
+        console.log(name,photo,email,password);
+        if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password))
+        {
+          setRegister("Please provide a valid password .(Minimum 6 characters,one Uppercase letter,one special letter)")
+            return;
+
+        }
+        setRegister('');
+        setSuccess('');
+        
         createUser(email,password)
-        .then(result=>{
-            const user=result.user;
-            console.log(user);
-            
+        .then(result=>
+          {
+            console.log(result.user)
+            new Swal.fire('Registration is successfully done...!')
+           
+            e.target.reset();
+            navigate(location ?. state ? location.state : '/');
+
+          }
+          )
+        .catch(error=>{
+          setRegister(error.message);
         })
-        .catch(error=>console.log(error))
-        console.log(name,email,password)
 
        
 
@@ -41,6 +64,13 @@ const Signup = () => {
                 </label>
                 <input type="text" name="name" placeholder="name" className="input input-bordered" required />
               </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text">Photo URL</span>
+                </label>
+                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required="required"/>
+            </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -60,6 +90,11 @@ const Signup = () => {
              <input type="submit" value="SignUp" className='btn btn-primary' />
               </div>
             </form>
+            {
+                registerError && <div>
+                    <p className=" text-red-600 font-bold">{registerError}</p>
+                </div>
+            }
             <p className='p-4 ml-4'>Already have an Account? <Link className=' text-xl font-bold text-orange-600 ' to="/login">Login</Link></p>
           </div>
         </div>

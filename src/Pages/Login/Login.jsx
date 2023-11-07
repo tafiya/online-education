@@ -8,11 +8,6 @@ import Swal from "sweetalert2";
 import { FcGoogle } from 'react-icons/fc';
 import {   signInWithPopup } from "firebase/auth";
 
-
-
-
-
-
 const Login = () => {
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();

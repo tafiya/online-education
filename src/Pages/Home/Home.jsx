@@ -1,10 +1,13 @@
 import Banner from "./Banner";
+// import Faq from "./Faq";
+// import Team from "./Team";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            hi from home page
+            {/* <Faq></Faq>
+           <Team></Team> */}
         </div>
     );
 };

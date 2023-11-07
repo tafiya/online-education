@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "photo": "https://i.ibb.co/sWMCk5H/member5.jpg",
+      "details": "John is an experienced developer with a passion for front-end technologies."
+    },
+    {
+      "id": 2,
+      "name": "Emily Smith",
+      "photo": "https://i.ibb.co/0qF4rWh/memder1.jpg",
+      "details": "Emily specializes in graphic design and user experience, with a keen eye for detail."
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "photo": "https://i.ibb.co/SfY5Nzs/member3.jpg",
+      "details": "Michael is a project manager with expertise in agile methodologies and team coordination."
+    },
+    {
+      "id": 4,
+      "name": "Sophia Garcia",
+      "photo": "https://i.ibb.co/ygm1qD3/member4.jpg",
+      "details": "Sophia is a marketing specialist who excels in digital marketing strategies."
+    },
+    {
+      "id": 5,
+      "name": "Daniel Brown",
+      "photo": "https://i.ibb.co/86CqJPN/member6.jpg",
+      "details": "Daniel is a content creator and writer, passionate about storytelling and brand narrative."
+    },
+    {
+      "id": 6,
+      "name": "Olivia Wilson",
+      "photo": "https://i.ibb.co/X8Bt51F/member2.jpg",
+      "details": "Olivia is a data analyst skilled in interpreting complex data sets and deriving insights."
+    }
+  ]
+  
