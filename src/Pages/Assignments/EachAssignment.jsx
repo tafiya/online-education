@@ -14,7 +14,7 @@ const EachAssignment = ({assignment}) => {
           <div className=' flex flex-col my-4'>
           <p className=' text-sm font-base'>{description}</p>
           <p>Marks:{marks}</p>
-          <p>Email:{creatorEmail}</p>
+         
           <div className=" mt-4 flex justify-between">
           <Link to={`/viewDetails/${_id}`}><button className=" border border-yellow-500 text-orange-400 p-2 rounded-lg hover:bg-yellow-500 hover:text-white font-semibold ">View</button></Link>
           <Link to={`/updateAssignments/${_id}`}><button className=" border border-yellow-500 text-orange-400 p-2 rounded-lg hover:bg-yellow-500 hover:text-white font-semibold ">Update</button></Link>
