@@ -9,6 +9,7 @@ import MyAssignments from "../Pages/MyAssignments/MyAssignments";
 import UpdatePage from "../Layouts/UpdatePage";
 import ViewDetails from "../ViewDetails/ViewDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -34,21 +35,21 @@ const router = createBrowserRouter([
         },
         {
           path:"createAssignments",
-          element:<CreateAssignment></CreateAssignment>
+          element:<PrivateRoute><CreateAssignment></CreateAssignment></PrivateRoute>
 
         },
         {
           path:"myAssignments",
-          element:<MyAssignments></MyAssignments>
+          element:<PrivateRoute><MyAssignments></MyAssignments></PrivateRoute>
         },
         {
           path:"/updateAssignments/:id",
-          element:<UpdatePage></UpdatePage>,
+          element:<PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
           loader:({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
         },
         {
           path:"/viewDetails/:id",
-          element:<ViewDetails></ViewDetails>,
+          element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
           loader:()=>fetch('http://localhost:5000/assignments')
         }
 
