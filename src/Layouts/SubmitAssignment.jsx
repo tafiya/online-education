@@ -1,13 +1,21 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Providers/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
 
 const SubmitAssignment = () => {
+    const {user}=useContext(AuthContext);
+    const email=user.email;
+    const updateAssignments=useLoaderData();
+    const {_id,title,level,marks,description,date,photo,creatorEmail}=updateAssignments;
+
     const handleAssignment=e=>{
         e.preventDefault();
         const form =e.target;
         const file=form.file.value;
         const note =form.note.value;
-        const submitAssignment={file,note}
+        const submitAssignment={file,note,title,level,description,photo,email}
         console.log(submitAssignment);
         fetch('http://localhost:5000/submitAssignment',{
             method:"POST",

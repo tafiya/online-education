@@ -24,7 +24,7 @@ const EachDetails = ({NewItem}) => {
    <p className="text-lg text-slate-500 mb-6">{level}</p>
  
    {/* <button onClick={handleCart} className=" w-full btn btn-active text-white bg-red-400">Add to cart</button> */}
-   <Link to="/submitAssignment"><button className="btn btn-primary" > Make Assignment</button></Link>
+   <Link to={`/submitAssignment/${_id}`}><button className="btn btn-primary" > Make Assignment</button></Link>
        
  
  </div>
