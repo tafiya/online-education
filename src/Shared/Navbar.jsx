@@ -51,11 +51,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
         {
-        user? <div className="flex flex-row items-center text-yellow-500 lg:text-lg text-sm  lg:gap-2 lg:font-medium "><h2>{user.displayName?user.displayName:'no name'}</h2> <button > <img src={user.photoURL? user.photoURL:profile
-        } alt="" className=" border rounded-full h-12 w-12" /></button>  <button onClick={handleLogOut} className="   text-white  btn btn-outline btn-warning">LogOut</button></div> :<Link to='/login'><button className=" btn btn-outline btn-warning text-white">Login</button></Link>
+        user? <div className="flex flex-row items-center text-yellow-500 lg:text-lg text-sm  lg:gap-2 lg:font-medium" ><div className="tooltip tooltip-bottom" data-tip={user.displayName?user.displayName:'no name'}><button > <img src={user.photoURL? user.photoURL:profile
+        } alt="" className=" border rounded-full h-12 w-12" /></button></div>   <button onClick={handleLogOut} className="   text-white  btn btn-outline btn-warning">LogOut</button></div> :<Link to='/login'><button className=" btn btn-outline btn-warning text-white">Login</button></Link>
     
       }
         </div>
+        {/* //<h2>{user.displayName?user.displayName:'no name'}</h2> */}
       </div>
     );
 };

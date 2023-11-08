@@ -30,7 +30,7 @@ const CreateAssignment = () => {
             {
                  Swal.fire(
                     'Good job!',
-                    'One product is added!',
+                    'Assignment is created!',
                     'success'
                   )
                   console.log(data)

@@ -1,11 +1,25 @@
+
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const EachAssignment = ({assignment}) => {
     const{_id,title,photo,description,level,marks,
         creatorEmail}=assignment;
+        const {user}=useContext(AuthContext);
+     
+        // const handleDelete=id=>{
+        //   console.log(id);
+        //   // if(user.email===creatorEmail)
+        //   // {
+            
+        //   // }
+
+        // }
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
+          <button   className=" text-xl font-bold hover:text-red-600 text-end p-2">X</button>
         <figure className="px-10 pt-10 h-1/2">
           <img src={photo} alt="service picture" className="rounded-xl" />
         </figure>

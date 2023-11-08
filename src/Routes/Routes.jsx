@@ -10,6 +10,7 @@ import UpdatePage from "../Layouts/UpdatePage";
 import ViewDetails from "../ViewDetails/ViewDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import SubmitAssignment from "../Layouts/SubmitAssignment";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
           path:"/viewDetails/:id",
           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
           loader:()=>fetch('http://localhost:5000/assignments')
+        },
+        {
+          path:'submitAssignment',
+          element:<SubmitAssignment></SubmitAssignment>
         }
 
       ]

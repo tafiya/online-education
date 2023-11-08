@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const EachDetails = ({NewItem}) => {
@@ -23,7 +24,8 @@ const EachDetails = ({NewItem}) => {
    <p className="text-lg text-slate-500 mb-6">{level}</p>
  
    {/* <button onClick={handleCart} className=" w-full btn btn-active text-white bg-red-400">Add to cart</button> */}
-       <button className="btn btn-primary" > Make Assignment</button>
+   <Link to="/submitAssignment"><button className="btn btn-primary" > Make Assignment</button></Link>
+       
  
  </div>
 

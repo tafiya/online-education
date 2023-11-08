@@ -40,7 +40,7 @@ const UpdatePage = () => {
         {
             Swal.fire(
                 'Good job!',
-                'Product is updated',
+                'Assignment is updated',
                 'success'
               )
            
