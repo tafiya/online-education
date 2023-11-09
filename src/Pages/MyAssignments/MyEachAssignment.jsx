@@ -11,6 +11,7 @@ const MyEachAssignment = ({myAssignment}) => {
   <div className="card-body w-2/3">
     <h2 className="card-title">{title}</h2>
     
+    
     <div className="card-actions justify-end">
       <button className="btn btn-warning">{status}</button>
     </div>
