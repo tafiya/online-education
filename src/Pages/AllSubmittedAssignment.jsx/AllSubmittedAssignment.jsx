@@ -5,7 +5,7 @@ import EachPending from "./EachPending";
 
 const AllSubmittedAssignment = () => {
     const [allSubmitted,setAllSubmitted]=useState([]);
-    const url=`http://localhost:5000/submitAssignment?status=pending`;
+    const url=`https://online-group-study-server-rust.vercel.app/submitAssignment?status=pending`;
     useEffect(()=>{
         axios.get(url,{withCredentials:true})
         .then(res=>{
@@ -17,7 +17,8 @@ const AllSubmittedAssignment = () => {
     },[url]);
     console.log('all pending dt',allSubmitted);
     const handleConfirm =id=>{
-        fetch(`http://localhost:5000/submitAssignment/${id}`,{
+        console.log("confirm hits");
+        fetch(`https://online-group-study-server-rust.vercel.app/submitAssignment/${id}`,{
             method: 'PATCH',
             headers:{
                 'content-type':'application/json'
@@ -32,7 +33,7 @@ const AllSubmittedAssignment = () => {
                 const remaining= allSubmitted.filter(booking=> booking._id !== id);
                 const updated =allSubmitted.find(booking=>booking._id === id);
                 updated.status ='confirm';
-                const newBookings =[remaining];
+                const newBookings =[updated,...remaining];
                 setAllSubmitted(newBookings);
 
             }

@@ -28,7 +28,7 @@ const UpdatePage = () => {
 
         const addAssignment ={title,level,marks,description,date,photo,creatorEmail}
       console.log('after update',addAssignment)
-      fetch(`http://localhost:5000/assignments/${_id}`,{
+      fetch(`https://online-group-study-server-rust.vercel.app/assignments/${_id}`,{
         method:"PUT",
         headers:{
             'content-type': 'application/json'

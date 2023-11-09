@@ -2,11 +2,14 @@
 import UseServices from "../../UseServices";
 import EachAssignment from "./EachAssignment";
 import banner from '../../assets/image/assigntBanner.jpg'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 
 const Assignments = () => {
+  const {user} =useContext(AuthContext);
     const allData= UseServices()
     const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -44,6 +47,28 @@ const Assignments = () => {
   useEffect(() => {
     filterData(); // Call filter function when selected level changes
   }, [selectedLevel, data]);
+  const handleDelete= (id) =>{
+    
+      const proceed =confirm('Are you sure ?you want to delete?')
+      if(proceed){
+          fetch(`https://online-group-study-server-rust.vercel.app/assignments/${id}`,{
+              method:'DELETE'
+          })
+          .then( res =>res.json())
+          .then(data =>{
+              console.log(data);
+              if(data.deletedCount > 0)
+              {
+                  Swal('Delete successfully');
+                  const remaining= filteredData.filter(booking=>booking._id!==id )
+                  setFilteredData(remaining);
+              }
+          })
+      }
+   
+
+
+}
    
    
     return (
@@ -67,7 +92,7 @@ const Assignments = () => {
               
             <div className=" grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-6 my-24">
                 {
-                    filteredData.map(assignment=><EachAssignment key={assignment._id} assignment={assignment}></EachAssignment>
+                    filteredData.map(assignment=><EachAssignment key={assignment._id} handleDelete={handleDelete} assignment={assignment}></EachAssignment>
                    )
                 }
                 
@@ -81,3 +106,7 @@ const Assignments = () => {
 };
 
 export default Assignments;
+
+// {"_id":{"$oid":"65492e25a91311698ab70d1e"},"title":"Chemistry Experiment Report","level":"Hard","marks":"100","description":"Prepare a detailed report on the chemical reactions observed in the provided experiment.","date":"2023-11-15T18:08:49.000Z","photo":"https://i.ibb.co/ByrXvWF/chemistry-Experiment.jpg"}
+
+// {"_id":{"$oid":"6549c55770cee83c53e46ddc"},"title":"Mathematics Problem Sets","level":"Medium","marks":"100","description":"Solve the provided set of advanced mathematical problems.","date":"2023-11-28T05:01:29.000Z","photo":"https://i.ibb.co/7z9ysLg/mathmatice.jpg","creatorEmail":"montu@gmail.com"}

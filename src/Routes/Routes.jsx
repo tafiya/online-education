@@ -12,6 +12,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import SubmitAssignment from "../Layouts/SubmitAssignment";
 import AllSubmittedAssignment from "../Pages/AllSubmittedAssignment.jsx/AllSubmittedAssignment";
+import About from "../Pages/About/About";
 
 const router = createBrowserRouter([
     {
@@ -47,23 +48,28 @@ const router = createBrowserRouter([
         {
           path:"/updateAssignments/:id",
           element:<PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
+          loader:({params})=>fetch(`https://online-group-study-server-rust.vercel.app/assignments/${params.id}`)
         },
         {
           path:"/viewDetails/:id",
           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          loader:()=>fetch('http://localhost:5000/assignments')
+          loader:()=>fetch('https://online-group-study-server-rust.vercel.app/assignments')
         },
         {
           path:'/submitAssignment/:id',
-          element:<SubmitAssignment></SubmitAssignment>,
-          loader:({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
+          element:<PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
+          loader:({params})=>fetch(`https://online-group-study-server-rust.vercel.app/assignments/${params.id}`)
         },
         {
 
           path:'AllSubmittedAssignments',
-          element:<AllSubmittedAssignment></AllSubmittedAssignment>
+          element:<PrivateRoute><AllSubmittedAssignment></AllSubmittedAssignment></PrivateRoute>,
+         
 
+        },
+        {
+          path:"about",
+          element:<About></About>
         }
 
       ]

@@ -18,7 +18,7 @@ const CreateAssignment = () => {
 
         const addAssignment ={title,level,marks,description,date,photo,creatorEmail}
         console.log(addAssignment);
-        fetch('http://localhost:5000/createAssignment',{
+        fetch('https://online-group-study-server-rust.vercel.app/createAssignment',{
             method:"POST",
             headers:{
                 'content-type': 'application/json'

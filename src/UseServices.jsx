@@ -5,7 +5,7 @@ const UseServices = () => {
     const [assignments,setAssignment]=useState([]);
     
     useEffect(()=>{
-        fetch('http://localhost:5000/assignments')
+        fetch('https://online-group-study-server-rust.vercel.app/assignments')
         .then(res=>res.json())
         .then( data =>setAssignment(data))
    

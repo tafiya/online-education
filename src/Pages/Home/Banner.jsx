@@ -13,8 +13,7 @@ const Banner = () => {
             <div className='text-white w-2/3 pl-12 md:ml-24'>
               <h1 className=' text-6xl font-bold mb-6'>Lets Grow <br></br> <span className=' text-yellow-500'>your Education</span>  <br /> Level Up</h1>
               <p className='mb-6'>Hey! would you link to grow up your skill and if you are interested to do just start here</p>
-              <button className="btn   btn-secondary mr-5">Discover More</button>
-              <button className="btn btn-outline  btn-secondary ">Latest Project</button>
+         
             </div>
           </div>
           <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -28,8 +27,7 @@ const Banner = () => {
           <div className='text-white w-2/3 pl-12 md:ml-24'>
               <h1 className=' text-6xl font-bold mb-6'>Lets Grow <br></br> <span className=' text-yellow-500'>your Education</span>  <br /> Level Up</h1>
               <p className='mb-6'>Hey! would you link to grow up your skill and if you are interested to do just start here</p>
-              <button className="btn   btn-secondary mr-5">Discover More</button>
-              <button className="btn btn-outline  btn-secondary ">Latest Project</button>
+            
             </div>
           </div>
           <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -43,8 +41,7 @@ const Banner = () => {
           <div className='text-white w-2/3 pl-12 md:ml-24'>
               <h1 className=' text-6xl font-bold mb-6'>Lets Grow <br></br> <span className=' text-yellow-500'>your Education</span>  <br /> Level Up</h1>
               <p className='mb-6'>Hey! would you link to grow up your skill and if you are interested to do just start here</p>
-              <button className="btn   btn-secondary mr-5">Discover More</button>
-              <button className="btn btn-outline  btn-secondary ">Latest Project</button>
+             
             </div>
           </div>
           <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -58,8 +55,7 @@ const Banner = () => {
           <div className='text-white w-2/3 pl-12 md:ml-24'>
               <h1 className=' text-6xl font-bold mb-6'>Lets Grow <br></br> <span className=' text-yellow-500'>your Education</span>  <br /> Level Up</h1>
               <p className='mb-6'>Hey! would you link to grow up your skill and if you are interested to do just start here</p>
-              <button className="btn   btn-secondary mr-5">Discover More</button>
-              <button className="btn btn-outline  btn-secondary ">Latest Project</button>
+           
             </div>
           </div>
           <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">

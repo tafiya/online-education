@@ -20,7 +20,7 @@ const SubmitAssignment = () => {
         const submitAssignment={file,note,name,title,level,description,photo,email,status,marks}
         
         console.log(submitAssignment);
-        fetch('http://localhost:5000/submitAssignment',{
+        fetch('https://online-group-study-server-rust.vercel.app/submitAssignment',{
             method:"POST",
             headers:{
                 'content-type': 'application/json'
