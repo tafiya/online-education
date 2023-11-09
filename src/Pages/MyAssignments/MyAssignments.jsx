@@ -20,8 +20,8 @@ const MyAssignments = () => {
         // .then(data=>setBookings(data))
     },[url]);
     return (
-        <div>
-            <h2>Total bookings:{myAssignments.length}</h2>
+        <div  className=' max-w-7xl mx-auto'>
+          
             <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
                 {
                     myAssignments.map(myAssignment=><MyEachAssignment key={myAssignment._id} myAssignment={myAssignment}></MyEachAssignment>)

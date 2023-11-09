@@ -13,7 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import SubmitAssignment from "../Layouts/SubmitAssignment";
 import AllSubmittedAssignment from "../Pages/AllSubmittedAssignment.jsx/AllSubmittedAssignment";
 import About from "../Pages/About/About";
-import PreviewPage from "../Pages/AllSubmittedAssignment.jsx/PreviewPage";
+
 
 const router = createBrowserRouter([
     {
@@ -71,13 +71,8 @@ const router = createBrowserRouter([
         {
           path:"about",
           element:<About></About>
-        },
-        {
-          path:"/preview",
-          element:<PrivateRoute><PreviewPage></PreviewPage></PrivateRoute>,
-          loader:({params})=>fetch(`https://online-group-study-server-rust.vercel.app/submitAssignment/${params.id}`)
-
         }
+      
 
       ]
     },

@@ -21,13 +21,12 @@ const EachPending = ({booking,handleConfirm}) => {
         </td>
         <td>
         {name}
-          <br/>
-          <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+          
         </td>
         <td>{marks}</td>
         <th>
         {
-            status === 'confirm'?<Link to='/preview'><span className=" font-bold text-primary">Confirm</span></Link> :  <button onClick={()=>handleConfirm(_id)} className="btn btn-ghost btn-xs">Pending</button>
+            status === 'confirm'?<Link ><span className=" font-bold text-primary">Confirm</span></Link> :  <button onClick={()=>handleConfirm(_id)} className="btn btn-ghost btn-xs">Pending</button>
         }
         </th>
       </tr>
