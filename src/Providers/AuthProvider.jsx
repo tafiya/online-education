@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from "../firebase/firebase.config";
 import axios from "axios";
+import { motion } from "framer-motion";
+
 
 
 
@@ -68,7 +70,18 @@ const AuthProvider = ({children}) => {
 
     return (
         <AuthContext.Provider value={authInfo}>
+            <motion.dev Variants ={
+                {
+                    hidden:{opacity: 0,y:75},
+                    visible:{opacity:1, y:0}
+                }
+            }
+            initial="hidden"
+            animate="visible"
+            transition={{duration:0.5, delay:0.25}} >
             {children}
+            </motion.dev>
+          
         </AuthContext.Provider>
     );
 };
