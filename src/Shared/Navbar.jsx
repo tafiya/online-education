@@ -22,7 +22,7 @@ const Navbar = () => {
    
         <li><NavLink className=" text-yellow-500 font-bold text-lg"  to='myAssignments'>My Assignments</NavLink></li>
         <li><NavLink className=" text-yellow-500 font-bold text-lg"  to='createAssignments'>Create Assignments</NavLink></li>
-        <li><NavLink className=" text-yellow-500 font-bold text-lg"  to='myAssignments'>Submitted Assignments</NavLink></li>
+        <li><NavLink className=" text-yellow-500 font-bold text-lg"  to='AllSubmittedAssignments'>Submitted Assignments</NavLink></li>
         </>:<></>
       }
       

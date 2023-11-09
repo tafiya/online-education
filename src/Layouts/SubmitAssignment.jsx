@@ -15,7 +15,10 @@ const SubmitAssignment = () => {
         const form =e.target;
         const file=form.file.value;
         const note =form.note.value;
-        const submitAssignment={file,note,title,level,description,photo,email}
+        const name=form.name.value;
+        const status="pending";
+        const submitAssignment={file,note,name,title,level,description,photo,email,status,marks}
+        
         console.log(submitAssignment);
         fetch('http://localhost:5000/submitAssignment',{
             method:"POST",
@@ -27,6 +30,7 @@ const SubmitAssignment = () => {
           .then(res=>res.json())
           .then(data=>
             {
+                console.log()
                  Swal.fire(
                     'Good job!',
                     'Assignment is created!',
@@ -48,16 +52,22 @@ const SubmitAssignment = () => {
         <h2 className=" text-center font-bold text-xl text-warning">Submit your Assignment</h2>
         <div className="form-control">
           <label className="label">
+            <span className="label-text font-medium">Your name:</span>
+          </label>
+          <input type="text" placeholder="Name" required name="name" className="input input-bordered w-full "/>
+        </div>
+        <div className="form-control">
+          <label className="label">
             <span className="label-text font-medium">Select a file:</span>
           </label>
-          <input type="file" name="file" className="file-input file-input-bordered file-input-warning w-full max-w-xs" />
+          <input type="text" placeholder="File" required name="file" className="input input-bordered w-full "/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text font-medium">Make A note:</span>
           </label>
          
-          <textarea type="text" name="note" className="textarea border-warning textarea-bordered" placeholder="Make a note"></textarea>
+          <textarea type="text" name="note" required className="textarea border-warning textarea-bordered" placeholder="Make a note"></textarea>
     
         </div>
         <div className="form-control mt-6">

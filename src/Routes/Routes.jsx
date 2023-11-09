@@ -11,6 +11,7 @@ import ViewDetails from "../ViewDetails/ViewDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import SubmitAssignment from "../Layouts/SubmitAssignment";
+import AllSubmittedAssignment from "../Pages/AllSubmittedAssignment.jsx/AllSubmittedAssignment";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +58,12 @@ const router = createBrowserRouter([
           path:'/submitAssignment/:id',
           element:<SubmitAssignment></SubmitAssignment>,
           loader:({params})=>fetch(`http://localhost:5000/assignments/${params.id}`)
+        },
+        {
+
+          path:'AllSubmittedAssignments',
+          element:<AllSubmittedAssignment></AllSubmittedAssignment>
+
         }
 
       ]
