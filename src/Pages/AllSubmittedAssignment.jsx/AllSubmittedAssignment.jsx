@@ -40,27 +40,27 @@ const AllSubmittedAssignment = () => {
         })
     }
     return (
-        <div>
-                        <div className="overflow-x-auto">
+        <div  className=' max-w-7xl mx-auto'>
+
+<div className="overflow-x-auto">
   <table className="table">
     {/* head */}
     <thead>
-      <tr>
-      
-        <th>Delete</th>
-        <th>Service Name</th>
-        <th>price</th>
-        <th></th>
+      <tr className="text-xl text-black font-semibold">
+        <th>Assignment Name</th>
+        <th>Name</th>
+        <th>Marks</th>
+        <th>State</th>
       </tr>
     </thead>
     <tbody>
-      {
+      
+    {
         allSubmitted.map(booking=><EachPending  key={booking._id} booking={booking}  handleConfirm={handleConfirm}></EachPending>
         )
       }
-      
     </tbody>
-  
+ 
     
   </table>
 </div>
