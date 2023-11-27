@@ -8,7 +8,7 @@ const MyAssignments = () => {
     const {user}=useContext(AuthContext);
     const [myAssignments,setMyAssignments]=useState([]);
     //${user?.email}
-
+   
     const url=`https://online-group-study-server-rust.vercel.app/submitAssignment?email=${user?.email}`;
     useEffect(()=>{
         axios.get(url,{withCredentials:true})
