@@ -7,4 +7,4 @@ assignment task who has created it
 * User can submit pdf link in make assignment form
 
 
-#### Website live link- https://online-group-study-assignment.web.app/
+#### Website live link- https://playful-seahorse-1687f4.netlify.app/
