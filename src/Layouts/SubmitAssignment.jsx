@@ -42,43 +42,42 @@ const SubmitAssignment = () => {
             )
     }
     return (
-        <div>
-          
-            <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-  
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form onSubmit={handleAssignment} className="card-body">
-        <h2 className=" text-center font-bold text-xl text-warning">Submit your Assignment</h2>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-medium">Your name:</span>
-          </label>
-          <input type="text" placeholder="Name" required name="name" className="input input-bordered w-full "/>
+      <div>
+       <div className="hero min-h-screen bg-base-200">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <form onSubmit={handleAssignment} className="card-body">
+                <h2 className=" text-center font-bold text-xl text-warning">Submit your Assignment</h2>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text font-medium">Your name:</span>
+                  </label>
+                  <input type="text" placeholder="Name" required name="name" className="input input-bordered w-full " />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text font-medium">Select a file:</span>
+                  </label>
+                  <input type="text" placeholder="File" required name="file" className="input input-bordered w-full " />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text font-medium">Make A note:</span>
+                  </label>
+
+                  <textarea type="text" name="note" required className="textarea border-warning textarea-bordered" placeholder="Make a note"></textarea>
+
+                </div>
+                <div className="form-control mt-6">
+                  <button className="btn  btn-warning">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-medium">Select a file:</span>
-          </label>
-          <input type="text" placeholder="File" required name="file" className="input input-bordered w-full "/>
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-medium">Make A note:</span>
-          </label>
-         
-          <textarea type="text" name="note" required className="textarea border-warning textarea-bordered" placeholder="Make a note"></textarea>
-    
-        </div>
-        <div className="form-control mt-6">
-          <button className="btn  btn-warning">Submit</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-            
-        </div>
+
+      </div>
     );
 };
 

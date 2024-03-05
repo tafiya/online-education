@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import SubmitAssignment from "../Layouts/SubmitAssignment";
 import AllSubmittedAssignment from "../Pages/AllSubmittedAssignment.jsx/AllSubmittedAssignment";
 import About from "../Pages/About/About";
+import Dashboard from "../Layouts/Dashboard";
 
 
 const router = createBrowserRouter([
@@ -37,15 +38,8 @@ const router = createBrowserRouter([
           path:"assignments",
           element:<Assignments></Assignments>
         },
-        {
-          path:"createAssignments",
-          element:<PrivateRoute><CreateAssignment></CreateAssignment></PrivateRoute>
-
-        },
-        {
-          path:"myAssignments",
-          element:<PrivateRoute><MyAssignments></MyAssignments></PrivateRoute>
-        },
+      
+      
         {
           path:"/updateAssignments/:id",
           element:<PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
@@ -56,10 +50,23 @@ const router = createBrowserRouter([
           element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
           loader:()=>fetch('https://online-group-study-server-rust.vercel.app/assignments')
         },
+     
+   
         {
-          path:'/submitAssignment/:id',
-          element:<PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
-          loader:({params})=>fetch(`https://online-group-study-server-rust.vercel.app/assignments/${params.id}`)
+          path:"about",
+          element:<About></About>
+        }
+      
+
+      ]
+    },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path:"myAssignments",
+          element:<PrivateRoute><MyAssignments></MyAssignments></PrivateRoute>
         },
         {
 
@@ -69,12 +76,19 @@ const router = createBrowserRouter([
 
         },
         {
-          path:"about",
-          element:<About></About>
-        }
+          path:'submitAssignment/:id',
+          element:<PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
+          loader:({params})=>fetch(`https://online-group-study-server-rust.vercel.app/assignments/${params.id}`)
+        },
+        {
+          path:"createAssignments",
+          element:<PrivateRoute><CreateAssignment></CreateAssignment></PrivateRoute>
+
+        },
+
       
 
       ]
-    },
+    }
   ]);
   export default router;

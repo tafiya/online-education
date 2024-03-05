@@ -42,17 +42,18 @@ const AllSubmittedAssignment = () => {
     return (
         <div  className=' max-w-7xl mx-auto'>
 
-<div className="overflow-x-auto">
-  <table className="table">
+<div className="overflow-x-auto border border-green-300 rounded-lg">
+  <table className="table table-zebra md:w-full ">
     {/* head */}
-    <thead>
-      <tr className="text-xl text-black font-semibold">
+    <thead className="md:text-lg bg-[#A5DD9B] shadow rounded-lg">
+      <tr >
         <th>Assignment Name</th>
         <th>Name</th>
         <th>Marks</th>
         <th>State</th>
       </tr>
     </thead>
+  
     <tbody>
       
     {

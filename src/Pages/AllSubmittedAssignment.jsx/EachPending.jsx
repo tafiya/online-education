@@ -15,15 +15,14 @@ const EachPending = ({booking,handleConfirm}) => {
             </div>
             <div>
               <div className="font-bold">{title}</div>
-            
             </div>
           </div>
         </td>
-        <td>
+        <td className=" md:uppercase md:text-base" >
         {name}
           
         </td>
-        <td>{marks}</td>
+        <td className=" text-lg font-semibold">{marks}</td>
         <th>
         {
             status === 'confirm'?<Link ><span className=" font-bold text-primary">Confirm</span></Link> :  <button onClick={()=>handleConfirm(_id)} className="btn btn-ghost btn-xs">Pending</button>

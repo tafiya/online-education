@@ -42,7 +42,7 @@ const CreateAssignment = () => {
     }
     return (
         <div>
-                     <div className=" bg-[#F4F3F0] p-24">
+                     <div className=" bg-[#F4F3F0] px-24 py-8">
         <h2 className=" text-3xl font-extrabold text-center my-12">Create an Assignment</h2>
         <form  onSubmit={handleSubmit}>
             {/* coffee row */}
@@ -122,7 +122,7 @@ const CreateAssignment = () => {
             
             </div>
            
-            <input type="submit" value="Add Product" className="btn btn-warning btn-block" />
+            <input type="submit" value="Add Assignment" className="btn btn-warning btn-block" />
            
           
     
